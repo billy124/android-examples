@@ -4,8 +4,9 @@
     <!-- From: file:/home/billy/AndroidStudioProjects/android-examples/androidExamples/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
-    <string name="app_name">androidExamples</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Android Examples</string>
+    <string name="location">Location</string>
+    <string name="search">Search</string>
     <!-- From: file:/home/billy/AndroidStudioProjects/android-examples/androidExamples/app/src/main/res/values/styles.xml -->
     <eat-comment />
 

@@ -22,14 +22,15 @@
             android:hint="@string/search"
             android:layout_weight="1"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp" />
 
         <Button
             android:id="@+id/btnSpeak"
-            android:layout_width="45dp"
-            android:layout_height="40dp"
-			android:background="@drawable/microphone_1"/>
-		
+            android:layout_width="22dp"
+            android:layout_height="37dp"
+			android:background="@drawable/microphone"/>
+
     </LinearLayout>
 
 	<TextView
@@ -48,14 +49,13 @@
             android:layout_weight="1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
         />
 
         <Button
             android:id="@+id/btnLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Location" />
-
+            android:layout_width="28dp"
+            android:layout_height="37dp"
+            android:background="@drawable/location" />
     </LinearLayout>
-
 </LinearLayout>
