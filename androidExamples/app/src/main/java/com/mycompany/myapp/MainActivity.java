@@ -17,13 +17,16 @@ public class MainActivity extends Activity
 {
 	private static final int REQUEST_CODE = 1234;
     private ListView wordsList;
-	
+
+    EditText search;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-		
+
+        search = (EditText) findViewById(R.id.search);
 		Button btnSpeak = (Button) findViewById(R.id.btnSpeak);
 		
 		PackageManager pm = getPackageManager();
@@ -61,7 +64,8 @@ public class MainActivity extends Activity
             List<String> results = data.getStringArrayListExtra(
                     RecognizerIntent.EXTRA_RESULTS);
             String spokenText = results.get(0);
-            // Do something with spokenText
+
+            search.setText(spokenText);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
