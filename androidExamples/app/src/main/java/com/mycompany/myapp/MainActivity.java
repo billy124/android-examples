@@ -83,7 +83,7 @@ public class MainActivity extends Activity
                     lat = location.getLatitude ();
                     lon = location.getLongitude ();
 
-                    locationText.setText("hi");
+                    locationText.setText("Lat:"+lat.toString()+" lon:"+lon.toString());
 
                 }
                 catch (NullPointerException e){
