@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 
-public class MainActivity extends Activity 
+public class MainActivity extends Activity
 {
 	private static final int REQUEST_CODE = 1234;
     private ListView wordsList;
@@ -72,16 +72,13 @@ public class MainActivity extends Activity
             public void onClick(View v)
             {
 
-                // Get the location manager
-                LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-                Criteria criteria = new Criteria();
-                String bestProvider = locationManager.getBestProvider(criteria, false);
-                android.location.Location location = locationManager.getLastKnownLocation(bestProvider);
-                Double lat,lon;
-                Date date = new Date();
+                LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+                android.location.Location location = locationManager.getLastKnownLocation(locationManager.PASSIVE_PROVIDER);
+
                 try {
-                    lat = location.getLatitude ();
-                    lon = location.getLongitude ();
+                    Double lat = (Double) location.getLatitude();
+                    Double lon = (Double) location.getLongitude();
 
                     locationText.setText("Lat:"+lat.toString()+" lon:"+lon.toString());
 
