@@ -1,16 +1,26 @@
 package com.mycompany.myapp;
 
 import android.app.*;
+import android.location.Address;
+import android.location.Criteria;
+import android.location.Geocoder;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.*;
+import android.text.format.DateFormat;
 import android.widget.*;
 import android.content.pm.*;
 import android.content.*;
 import android.speech.*;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import android.view.View.*;
 import android.view.*;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class MainActivity extends Activity 
@@ -19,6 +29,7 @@ public class MainActivity extends Activity
     private ListView wordsList;
 
     EditText search;
+    EditText locationText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,8 +38,12 @@ public class MainActivity extends Activity
         setContentView(R.layout.main);
 
         search = (EditText) findViewById(R.id.search);
+        locationText = (EditText) findViewById(R.id.location);
+
 		Button btnSpeak = (Button) findViewById(R.id.btnSpeak);
-		
+        Button location = (Button) findViewById(R.id.btnLocation);
+
+
 		PackageManager pm = getPackageManager();
 		List<ResolveInfo> activities = pm.queryIntentActivities(new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
 		
@@ -51,9 +66,39 @@ public class MainActivity extends Activity
 				
 				}
 			});
+
+        location.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+
+                // Get the location manager
+                LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+                Criteria criteria = new Criteria();
+                String bestProvider = locationManager.getBestProvider(criteria, false);
+                android.location.Location location = locationManager.getLastKnownLocation(bestProvider);
+                Double lat,lon;
+                Date date = new Date();
+                try {
+                    lat = location.getLatitude ();
+                    lon = location.getLongitude ();
+
+                    locationText.setText("Lat:"+lat.toString()+" lon:"+lon.toString());
+
+                }
+                catch (NullPointerException e){
+
+
+                }
+
+            }
+        });
 		
 			
     }
+
+
+
 
     // This callback is invoked when the Speech Recognizer returns.
     // This is where you process the intent and extract the speech text from the intent.
@@ -71,3 +116,4 @@ public class MainActivity extends Activity
     }
 	
 }
+
