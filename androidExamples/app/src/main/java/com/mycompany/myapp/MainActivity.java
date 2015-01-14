@@ -76,48 +76,60 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v)
             {
+                boolean is_gps_available = false;
+
                 // get the users last best known location
                 LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                android.location.Location lastKnownLocation = locationManager.getLastKnownLocation(locationManager.PASSIVE_PROVIDER);
+                android.location.Location lastKnownLocation = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
 
                 if(locationManager == null){
                     locationManager = (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
                 }
-                LocationListener locationListener = new MyLocationListener();
-                locationManager.requestLocationUpdates(locationManager.PASSIVE_PROVIDER, 5000, 10, locationListener);
 
-				Geocoder userLocation = new Geocoder(getApplicationContext(), Locale.getDefault());
-				
-				List<Address> addresses = null;
-				try{
-					addresses = userLocation.getFromLocation(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude(), 1);
-				} catch(IOException e) {
-					Log.e("MainActivity", "IO Error");
-					
-				}
-				
-				if(addresses.size() > 0){
-					Address address = addresses.get(0);
-					String addressText = (String) address.getAddressLine(0);
-					
-
-					locationText.setText(addressText);
-				
-				}
-
-
-                try {
-                    Double lat = (Double) lastKnownLocation.getLatitude();
-                    Double lon = (Double) lastKnownLocation.getLongitude();
-
-                    //locationText.setText("Lat:"+lat.toString()+" lon:"+lon.toString());
-
-                }
-                catch (NullPointerException e){
-                    locationText.setText(e.toString());
+                try{
+                    is_gps_available = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+                } catch(Exception ex){}
+                try{
+                    is_gps_available = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+                } catch(Exception ex){
 
                 }
 
+                if(is_gps_available == true) {
+                    //LocationListener locationListener = new MyLocationListener();
+                    //locationManager.requestLocationUpdates(locationManager.PASSIVE_PROVIDER, 5000, 10, locationListener);
+
+                    Geocoder userLocation = new Geocoder(getApplicationContext(), Locale.getDefault());
+
+                    List<Address> addresses = null;
+                    try {
+                        addresses = userLocation.getFromLocation(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude(), 1);
+                    } catch (IOException e) {
+                        Log.e("MainActivity", "IO Error");
+
+                    }
+
+                    if (addresses.size() > 0) {
+                        Address address = addresses.get(0);
+                        String addressText = (String) address.getAddressLine(0);
+
+
+                        locationText.setText(addressText);
+
+                    }
+
+
+                    try {
+                        Double lat = (Double) lastKnownLocation.getLatitude();
+                        Double lon = (Double) lastKnownLocation.getLongitude();
+
+                        //locationText.setText("Lat:"+lat.toString()+" lon:"+lon.toString());
+
+                    } catch (NullPointerException e) {
+                        locationText.setText(e.toString());
+
+                    }
+                }
 
             }
         });
