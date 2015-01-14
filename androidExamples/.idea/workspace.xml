@@ -58,9 +58,13 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47483587" vertical-offset="421" max-vertical-offset="1335">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.23194748" vertical-offset="1048" max-vertical-offset="2235">
+              <caret line="88" column="106" selection-start-line="88" selection-start-column="106" selection-end-line="88" selection-end-column="106" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2099#3612#0" expanded="true" />
+                <element signature="e#3601#3602#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MyLocationListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1162,8 +1166,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/MyLocationListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/ConnectionCallbacks.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MyLocationListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1634,7 +1638,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1755">
           <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2099#3612#0" expanded="true" />
+            <element signature="e#3601#3602#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1671,7 +1679,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2099#3612#0" expanded="true" />
+            <element signature="e#3601#3602#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1813,7 +1825,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MyLocationListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1822,9 +1834,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mycompany/myapp/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47483587" vertical-offset="421" max-vertical-offset="1335">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.23194748" vertical-offset="1048" max-vertical-offset="2235">
+          <caret line="88" column="106" selection-start-line="88" selection-start-column="106" selection-end-line="88" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2099#3612#0" expanded="true" />
+            <element signature="e#3601#3602#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
