@@ -76,16 +76,14 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v)
             {
-
+                // get the users last best known location
                 LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
                 android.location.Location lastKnownLocation = locationManager.getLastKnownLocation(locationManager.PASSIVE_PROVIDER);
 
-
-
-
+                if(locationManager == null){
+                    locationManager = (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
+                }
                 LocationListener locationListener = new MyLocationListener();
-
                 locationManager.requestLocationUpdates(locationManager.PASSIVE_PROVIDER, 5000, 10, locationListener);
 
 				Geocoder userLocation = new Geocoder(getApplicationContext(), Locale.getDefault());
@@ -106,6 +104,8 @@ public class MainActivity extends Activity
 					locationText.setText(addressText);
 				
 				}
+
+
                 try {
                     Double lat = (Double) lastKnownLocation.getLatitude();
                     Double lon = (Double) lastKnownLocation.getLongitude();
