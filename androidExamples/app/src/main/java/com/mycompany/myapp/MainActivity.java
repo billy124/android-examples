@@ -21,6 +21,8 @@ import android.view.*;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.io.*;
+import android.util.*;
 
 
 public class MainActivity extends Activity
@@ -37,6 +39,9 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+		ActionBar ab = getActionBar();
+		ab.hide();
+		
         search = (EditText) findViewById(R.id.search);
         locationText = (EditText) findViewById(R.id.location);
 
@@ -76,11 +81,29 @@ public class MainActivity extends Activity
 
                 android.location.Location location = locationManager.getLastKnownLocation(locationManager.PASSIVE_PROVIDER);
 
+				Geocoder userLocation = new Geocoder(getApplicationContext(), Locale.getDefault());
+				
+				List<Address> addresses = null;
+				try{
+					addresses = userLocation.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+				} catch(IOException e) {
+					Log.e("MainActivity", "IO Error");
+					
+				}
+				
+				if(addresses.size() > 0){
+					Address address = addresses.get(0);
+					String addressText = (String) address.getAddressLine(0);
+					
+
+					locationText.setText(addressText);
+				
+				}
                 try {
                     Double lat = (Double) location.getLatitude();
                     Double lon = (Double) location.getLongitude();
 
-                    locationText.setText("Lat:"+lat.toString()+" lon:"+lon.toString());
+                    //locationText.setText("Lat:"+lat.toString()+" lon:"+lon.toString());
 
                 }
                 catch (NullPointerException e){
