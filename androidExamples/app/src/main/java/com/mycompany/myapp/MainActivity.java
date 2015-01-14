@@ -129,6 +129,10 @@ public class MainActivity extends Activity
                         locationText.setText(e.toString());
 
                     }
+                } else {
+                    Intent gpsOptionsIntent = new Intent(
+                            android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivity(gpsOptionsIntent);
                 }
 
             }
