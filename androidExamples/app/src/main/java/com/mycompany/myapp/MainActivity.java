@@ -74,19 +74,14 @@ public class MainActivity extends Activity
 
                 LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-                android.location.Location location = locationManager.getLastKnownLocation(locationManager.PASSIVE_PROVIDER);
+                android.location.Location lastKnownLocation = locationManager.getLastKnownLocation(locationManager.PASSIVE_PROVIDER);
+                Double lat = (Double) lastKnownLocation.getLatitude();
+                Double lon = (Double) lastKnownLocation.getLongitude();
+                locationText.setText("Lat:"+lat.toString()+" lon:"+lon.toString());
 
-                try {
-                    Double lat = (Double) location.getLatitude();
-                    Double lon = (Double) location.getLongitude();
+                LocationListener locationListener = new MyLocationListener();
 
-                    locationText.setText("Lat:"+lat.toString()+" lon:"+lon.toString());
-
-                }
-                catch (NullPointerException e){
-                    locationText.setText(e.toString());
-
-                }
+                locationManager.requestLocationUpdates(locationManager.PASSIVE_PROVIDER, 5000, 10, locationListener);
 
             }
         });
