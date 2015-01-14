@@ -111,8 +111,16 @@ public class MainActivity extends Activity
 
                     if (addresses.size() > 0) {
                         Address address = addresses.get(0);
-                        String addressText = (String) address.getAddressLine(0);
-
+                        String addressText = String.format(
+                                "%s, %s, %s, $s",
+                                // If there's a street address, add it
+                                address.getMaxAddressLineIndex() > 0 ?
+                                        address.getAddressLine(0) : "",
+                                // Locality is usually a city
+                                address.getLocality(),
+                                // The country of the address
+                                address.getCountryName(),
+                                address.getPostalCode());
 
                         locationText.setText(addressText);
 
