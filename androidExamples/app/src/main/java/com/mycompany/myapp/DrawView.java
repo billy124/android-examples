@@ -26,7 +26,7 @@ public class DrawView extends View implements OnTouchListener {
     @Override
     public void onDraw(Canvas canvas) {
         for (Point point : points) {
-            canvas.drawCircle(point.x, point.y, 2, paint);
+            canvas.drawCircle(point.x, point.y, 50, paint);
         }
     }
 
