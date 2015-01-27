@@ -15,7 +15,9 @@ public class Scribbler extends Activity {
 
         RelativeLayout parent = (RelativeLayout) findViewById(R.id.linearLayout);
         drawView = new DrawView(this);
+        drawView.setBackgroundColor(Color.WHITE);
         parent.addView(drawView);
+        drawView.requestFocus();
 
     }
 }
