@@ -39,15 +39,13 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-		ActionBar ab = getActionBar();
-		ab.hide();
-		
         search = (EditText) findViewById(R.id.search);
         locationText = (EditText) findViewById(R.id.location);
 
 		Button btnSpeak = (Button) findViewById(R.id.btnSpeak);
         Button location = (Button) findViewById(R.id.btnLocation);
 
+        Button btnDraw = (Button) findViewById(R.id.btnDraw);
 
 		PackageManager pm = getPackageManager();
 		List<ResolveInfo> activities = pm.queryIntentActivities(new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
@@ -143,9 +141,20 @@ public class MainActivity extends Activity
                     startActivity(gpsOptionsIntent);
                 }
 
+
+
             }
         });
-		
+
+        btnDraw.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent;
+                intent = new Intent(getApplicationContext(), DrawingActivity.class);
+                startActivity(intent);
+            }
+        });
 			
     }
 
