@@ -15,10 +15,10 @@
 
 
         <activity
-            android:name=".Scribbler"
+            android:name=".DrawingActivity"
             android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="android.intent.action.scribbler" />
+                <action android:name="android.intent.action.drawing" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
