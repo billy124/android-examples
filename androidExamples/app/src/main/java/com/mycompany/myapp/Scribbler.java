@@ -3,7 +3,7 @@ package com.mycompany.myapp;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 
 public class Scribbler extends Activity {
     DrawView drawView;
@@ -13,7 +13,7 @@ public class Scribbler extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scribbler);
 
-        RelativeLayout parent = (RelativeLayout) findViewById(R.id.linearLayout);
+        LinearLayout parent = (LinearLayout) findViewById(R.id.linearLayout);
         drawView = new DrawView(this);
         drawView.setBackgroundColor(Color.WHITE);
         parent.addView(drawView);
