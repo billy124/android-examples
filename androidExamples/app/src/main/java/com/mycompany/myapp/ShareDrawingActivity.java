@@ -177,6 +177,9 @@ public class ShareDrawingActivity extends Activity implements OnClickListener
                         savedToast.show();
 
                         // Create intent to deliver some kind of result data
+                        Intent result = new Intent("com.mycompany.RESULT_ACTION", Uri.parse("content://result_uri"));
+                        setResult(Activity.RESULT_OK, result);
+                        finish();
                     }
                     else{
                         Toast unsavedToast = Toast.makeText(getApplicationContext(),
