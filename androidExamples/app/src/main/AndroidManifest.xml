@@ -33,9 +33,16 @@
             android:label="Drawing" >
 
             <intent-filter>
-                <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+                <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="*/*" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="photo/*" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="image/*" />
                 <data android:mimeType="photo/*" />
                 <data android:mimeType="video/*" />
