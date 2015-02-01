@@ -32,6 +32,10 @@ public class ShareDrawingActivity extends Activity implements OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawing);
 
+        // Get the intent that started this activity
+        Intent intent = getIntent();
+        Uri data = intent.getData();
+
         drawView = (DrawingView)findViewById(R.id.drawing);
         LinearLayout paintLayout = (LinearLayout)findViewById(R.id.paint_colors);
 
