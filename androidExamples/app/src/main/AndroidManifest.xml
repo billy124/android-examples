@@ -36,16 +36,33 @@
                 <action
                     android:name="android.intent.action.PICK" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="*/*" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="photo/*" />
             </intent-filter>
 
             <intent-filter>
                 <action
                     android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="*/*" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="photo/*" />
             </intent-filter>
 
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="photo/*" />
+            </intent-filter>
+
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.OPEN_DOCUMENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="photo/*" />
+            </intent-filter>
 
         </activity>
 
