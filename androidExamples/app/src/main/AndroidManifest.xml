@@ -34,23 +34,20 @@
         <activity
             android:name=".ShareDrawingActivity"
             android:label="Drawing" >
-
+            
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+                <data android:mimeType="image/*"/>
+            </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.OPENABLE" />
                 <data android:mimeType="image/*"/>
-                <data android:mimeType="*/*"/>
+                <data android:mimeType="image/*"/>
             </intent-filter>
-
-
-            <intent-filter>
-                <action android:name="android.intent.action.PICK" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.OPENABLE" />
-                <data android:mimeType="*/*"/>
-            </intent-filter>
-
 
         </activity>
 
