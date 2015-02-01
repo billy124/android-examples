@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -173,6 +175,11 @@ public class ShareDrawingActivity extends Activity implements OnClickListener
                         Toast savedToast = Toast.makeText(getApplicationContext(),
                                 "Drawing saved to Gallery!", Toast.LENGTH_SHORT);
                         savedToast.show();
+
+                        // Create intent to deliver some kind of result data
+                        Intent result = new Intent("com.mycompany.RESULT_ACTION", Uri.parse("content://result_uri"));
+                        setResult(Activity.RESULT_OK, result);
+                        finish();
                     }
                     else{
                         Toast unsavedToast = Toast.makeText(getApplicationContext(),
