@@ -31,6 +31,16 @@
         <activity
             android:name=".ShareDrawingActivity"
             android:label="Drawing" >
+
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.CHOOSER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="photo/*" />
+            </intent-filter>
+
+
         </activity>
 
     </application>
