@@ -64,6 +64,22 @@
                 <data android:mimeType="photo/*" />
             </intent-filter>
 
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.ATTACH_DATA" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="photo/*" />
+            </intent-filter>
+
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.all_apps" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="photo/*" />
+            </intent-filter>
+
         </activity>
 
     </application>
